@@ -27,7 +27,7 @@ Dee Newcum <deenewcum@cpan.org>
 
 =head1 CONTRIBUTING
 
-Please use the Github's issue tracker to file both bugs and feature requests.
+Please use Github's issue tracker to file both bugs and feature requests.
 Contributions to the project in form of Github's pull requests are welcome. 
 
 =head1 LICENSE
