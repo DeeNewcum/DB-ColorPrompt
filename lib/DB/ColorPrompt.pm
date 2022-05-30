@@ -43,7 +43,7 @@ use warnings;
 use Carp;                       # core Perl, as of Perl 5.000
 use Term::ANSIColor ();         # core Perl, as of Perl 5.6.0
 
-our $main_color;        # the color we use when there's no typeahead
+our $interactive_color;        # the color we use when there's no typeahead
 our $typeahead_color;   # the color we use when there is typeahead
 
 my $original_readline = \&DB::readline;
@@ -52,9 +52,9 @@ sub import {
     my $class = shift;
 
     if (@_) {
-        $main_color = shift;
-        if (!_colorvalid($main_color)) {
-            carp "'$main_color' isn't a valid color attribute per Term::ANSIColor";
+        $interactive_color = shift;
+        if (!_colorvalid($interactive_color)) {
+            carp "'$interactive_color' isn't a valid color attribute per Term::ANSIColor";
             # Normally perl5db.pl fastidiously avoids exiting. Tell it to stop
             # doing that and actually let us exit.
             $DB::inhibit_exit = 0;
@@ -76,7 +76,7 @@ sub import {
         }
     } else {
         # default values
-        $main_color = 'on_blue';
+        $interactive_color = 'on_blue';
         $typeahead_color = 'blue';
     }
 
@@ -131,9 +131,9 @@ sub _readline {
             return $original_readline->($prompt . $append);
         }
     } else {
-        if (defined($main_color)) {
+        if (defined($interactive_color)) {
             return $original_readline->(
-                Term::ANSIColor::colored($prompt, $main_color)
+                Term::ANSIColor::colored($prompt, $interactive_color)
                 . $append);
         } else {
             return $original_readline->($prompt . $append);
