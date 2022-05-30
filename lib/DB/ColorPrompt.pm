@@ -18,7 +18,7 @@ Any L<Term::ANSIColor> color sequence works.
 
 =head1 DESCRIPTION
 
-When used alongside the L<perldebug|default debugger>, this provides the ability
+When used alongside the L<default debugger|perldebug>, this provides the ability
 to hilight the prompt in the given color.
 
 =head1 AUTHOR

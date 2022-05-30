@@ -12,7 +12,7 @@ Any [Term::ANSIColor](https://metacpan.org/pod/Term%3A%3AANSIColor) color sequen
 
 # DESCRIPTION
 
-When used alongside the [perldebug](https://metacpan.org/pod/default%20debugger), this provides the ability
+When used alongside the [default debugger](https://metacpan.org/pod/perldebug), this provides the ability
 to hilight the prompt in the given color.
 
 # AUTHOR
