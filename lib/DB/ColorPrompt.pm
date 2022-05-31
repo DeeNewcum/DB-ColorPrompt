@@ -53,7 +53,7 @@ sub import {
 
     if (@_) {
         $interactive_color = shift;
-        if (!_colorvalid($interactive_color)) {
+        if (defined($interactive_color) && !_colorvalid($interactive_color)) {
             carp "'$interactive_color' isn't a valid color attribute per Term::ANSIColor";
             # Normally perl5db.pl fastidiously avoids exiting. Tell it to stop
             # doing that and actually let us exit.
@@ -63,7 +63,7 @@ sub import {
 
         if (@_) {
             $typeahead_color = shift;
-            if (!_colorvalid($typeahead_color)) {
+            if (defined($typeahead_color) && !_colorvalid($typeahead_color)) {
                 carp "'$typeahead_color' isn't a valid color attribute per Term::ANSIColor";
                 # Normally perl5db.pl fastidiously avoids exiting. Tell it to
                 # stop doing that and actually let us exit.
