@@ -39,6 +39,23 @@ L<perl5db.pl> doesn't have a way to directly do something like:
 This has been tested with Perl 5.6.0 through Perl 5.36.0, and it's anticipated
 to work as far back as Perl 5.004 at least.
 
+It also works without I<any> extra dependencies, so installation could be as
+simple as just downloading DB/ColorPrompt.pm to the right place. (however,
+before Perl 5.6.0, Term::ANSIColor wasn't included in Perl core, and in that
+case it would need to be installed separately).
+
+=head1 SEE ALSO
+
+There are several other modules that are designed to be C<use>d from within
+F<~/.perldb>:
+
+=over
+
+=item * L<DB::Color> -- Provides syntax highlighting using ANSI sequences, within
+the Perl debugger.
+
+=back
+
 =head1 AUTHOR
 
 Dee Newcum <deenewcum@cpan.org>
