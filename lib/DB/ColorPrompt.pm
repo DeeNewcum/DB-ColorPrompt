@@ -16,10 +16,28 @@ In your F<~/.perldb> file, add this:
 
 Any L<Term::ANSIColor> color sequence works.
 
+There's actually a second color for typeahead prompts (see below). That can be
+specified like this:
+
+ use DB::ColorPrompt 'black on_blue', 'green';
+
+The typeahead prompt defaults to foreground-blue.
+
 =head1 DESCRIPTION
 
 When used alongside the L<default debugger|perldebug>, this provides the ability
 to hilight the prompt in the given color.
+
+=head2 What's this "typeahead" thing?
+
+L<perl5db.pl> doesn't have a way to directly do something like:
+
+ DB::run_debugger_command('b my_subroutine');
+
+=head1 COMPATIBILITY
+
+This has been tested with Perl 5.6.0 through Perl 5.36.0, and it's anticipated
+to work as far back as Perl 5.004 at least.
 
 =head1 AUTHOR
 
